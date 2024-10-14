@@ -1,2 +1,2 @@
 # icsiscet-talk
-Companion code for my ICSISCET talk about Advanced Algorithms  
+My talk on Advanced Algorithms for ICSISCET.
