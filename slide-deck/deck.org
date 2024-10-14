@@ -24,7 +24,7 @@
 #    - CP in the larger AI landscape
 #    - Focus on algorithms that power intelligent systems
 
-* What is Constraint Programming (CP)?
+* Constraint Programming (CP)
 ** What is Constraint Programming?
 
    - CP is a declarative paradigm used to solve combinatorial problems
@@ -42,7 +42,7 @@
     - It removes invalid possibilities early in the search, leading to faster solutions
     - Relevance to Generative AI: Helps AI systems make structured decisions in real-time
 
-* Conference Scheduling Problem
+* Constraint Propagation example
 ** Conference Scheduling
     - Problem setup: Assign talks to rooms and time slots with constraints
     - Constraint: No overlapping talks in the same room, buffer time between sessions
@@ -53,18 +53,20 @@
     # - We define variables for talks, rooms, and time slots.
 #+ATTR_LATEX: :options \small
 #+BEGIN_SRC java :results output :exports both :wrap example :eval never-export
-  // Create a new model
+  // Step 1: Create a new model
   Model model = new Model("Conference Scheduling");
-  // Define variables-talks are assigned time slots and rooms
+
+  // Step 2: Define variables
   int numTalks = 4; int numRooms = 3; int numSlots = 4;
   // Define variables for rooms and time slots for each talk
-  IntVar[] roomAssignments = new IntVar[numTalks];
-  IntVar[] slotAssignments = new IntVar[numTalks];
+  IntVar[] roomAssigns = new IntVar[numTalks];
+  IntVar[] slotAssigns = new IntVar[numTalks];
   // Each talk is assigned a room from 0 to numRooms-1
   IntStream.range(0, numTalks).forEachOrdered(i -> {
-    roomAssignments[i]=model.intVar("Room"+i, 0, numRooms-1);
-    slotAssignments[i]=model.intVar("Slot"+i, 0, numSlots-1);
+    roomAssigns[i] = model.intVar("Room"+i,0,numRooms-1);
+    slotAssigns[i] = model.intVar("TimeSlot"+i,0,numSlots-1);
   });
+
 #+END_SRC
 
 ** Step 2: Adding Constraints - No Overlap in the Same Room
@@ -72,14 +74,14 @@
     - If two talks are in the same room, they must be in different time slots.
 
 #+BEGIN_SRC java
-    for (int i = 0; i < numTalks; i++) {
-        for (int j = i + 1; j < numTalks; j++) {
-            model.ifThen(
-                model.arithm(roomAssignments[i], "=", roomAssignments[j]),
-                model.arithm(timeSlotAssignments[i], "!=", timeSlotAssignments[j])
-            );
-        }
-    }
+  IntStream.range(0, numTalks).forEach(i ->
+    IntStream.range(i + 1, numTalks).forEach(j ->
+      model.ifThen(
+        model.arithm(roomAssignments[i],"=",roomAssignments[j]),
+        model.arithm(slotAssignments[i],"!=",slotAssignments[j])
+      )
+    )
+  );
 #+END_SRC
 
 ** Step 3: Adding Constraints - Buffer Time Between Rooms
@@ -87,14 +89,15 @@
     - This allows attendees to move between rooms.
 
 #+BEGIN_SRC java
-    for (int i = 0; i < numTalks; i++) {
-        for (int j = i + 1; j < numTalks; j++) {
-            model.ifThen(
-                model.arithm(roomAssignments[i], "!=", roomAssignments[j]),
-                model.distance(timeSlotAssignments[i], timeSlotAssignments[j], ">", 0)
-            );
-        }
-    }
+IntStream.range(0, numTalks).forEach(i ->
+  IntStream.range(i + 1, numTalks).forEach(j ->
+    model.ifThen(
+      model.arithm(roomAssignments[i],"!=",roomAssignments[j]),
+      // Ensure at least 1-time slot difference
+      model.distance(slotAssignments[i],slotAssignments[j], ">", 0)
+    )
+  )
+);
 #+END_SRC
 ** Step 4: Solving the Model
     - Finally, we use the solver to find a valid assignment for rooms and time slots.

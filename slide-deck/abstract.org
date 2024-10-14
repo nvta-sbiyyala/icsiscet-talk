@@ -1,0 +1,34 @@
+#+TITLE: Constraint Programming Algorithms in Generative AI: Enhancing Fast, Rule-Compliant Solutions
+#+AUTHOR: Shishir Biyyala
+#+DATE: October 26-27, 2024
+#+LATEX_CLASS: article
+#+LATEX_HEADER: \usepackage{amsmath,amsfonts,amssymb}
+#+LATEX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{a4paper, margin=1in}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rfoot{\thepage}
+#+OPTIONS: H:3 num:nil toc:nil
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \usepackage{sectsty}
+#+LATEX_HEADER: \sectionfont{\fontsize{12}{15}\selectfont}
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \singlespacing
+
+* Abstract
+
+As AI adoption accelerates across industries, the need for fast, rule-compliant generative systems has become more critical than ever. This talk covers Constraint Programming (CP), a powerful paradigm for solving combinatorial problems by efficiently handling constraints. We will explore how CP relates to the broader AI landscape and its relevance to generative AI.
+The focus will be on constraint propagation, a technique that reduces the search space and enables AI to generate results that satisfy predefined constraints. A demo will show how this technique enhances AI's speed, scalability, and accuracy in real-time scheduling applications, emphasizing CP's increasing role in modern AI systems.
+
+* Key References
+#+LATEX_HEADER: \small
+
+1. Smith, B., & Sturdy, M. (2016). _Constraint satisfaction problems and algorithms_. IEEE Transactions on Neural Networks and Learning Systems, 27(2), 261-269. [[https://ieeexplore.ieee.org/document/7317551]]
+2. Rossi, F., Van Beek, P., & Walsh, T. (2006). _Handbook of Constraint Programming_. Elsevier. [[https://www.sciencedirect.com/book/9780444527264/handbook-of-constraint-programming]]
+3. Barták, R. (2001). _Constraint programming: In pursuit of the holy grail of programming._ Crossroads, 7(1), 1-10. [[https://dl.acm.org/doi/10.1145/568264.568267]]
+4. Dechter, R. (2003). _Constraint Processing_. Morgan Kaufmann. [[https://www.elsevier.com/books/constraint-processing/dechter/978-1-55860-890-0]]
+5. Jussien, N., & Debruyne, R. (2006). _Constraint programming and hybrid systems: New perspectives_. In Proceedings of IEEE International Conference on Systems, Man, and Cybernetics, 2006. [[https://ieeexplore.ieee.org/document/4068637]]
+
+#+LATEX: \newpage
