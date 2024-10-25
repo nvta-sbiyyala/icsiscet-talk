@@ -25,6 +25,9 @@
 #    - Focus on algorithms that power intelligent systems
 
 * Introduction
+** Shishir Biyyala
+   - Accomplished software engineering leader driving innovation and delivering complex projects.
+   - https://www.linkedin.com/in/sbiyyala/
 ** AI and Fast, Rule-Compliant Systems
    - Recent AI adoption is driven by the need for cost reduction, automation, and more accessible AI tools.
    - 42% of enterprise companies have deployed AI, while 40% are exploring or experimenting.
