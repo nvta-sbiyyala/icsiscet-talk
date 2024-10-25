@@ -76,6 +76,7 @@
 #     - CP's role is growing in automating compliance-heavy AI outputs.
 
 ** Conclusion
-    - Summary: CP is a powerful tool for solving complex problems in AI
+    - CP is a powerful tool for solving complex problems in AI
     - Constraint Propagation allows for rapid, efficient query handling in Generative AI
     - Explore more use cases and applications of CP in intelligent systems!
+    - Talk artifacts available in https://github.com/nvta-sbiyyala/icsiscet-talk
