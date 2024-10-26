@@ -33,13 +33,13 @@
    - 42% of enterprise companies have deployed AI, while 40% are exploring or experimenting.
    - Generative AI is becoming prominent due to advancements in ease of use and scalability.
    - Financial services and telecommunications lead in AI adoption, driven by operational optimizations.
-   - Overcoming barriers like limited skills and data complexity is critical for successful AI deployment.
+   # - Overcoming barriers like limited skills and data complexity is critical for successful AI deployment.
 * Constraint Programming (CP)
 ** What is Constraint Programming?
 
-   - CP is a declarative paradigm used to solve combinatorial problems
-   - It involves specifying variables, constraints, and use of search algorithms to find solutions
-   - Sub-field of AI that intersects with optimization and decision-making
+   - CP is a declarative paradigm used to solve combinatorial problems.
+   - It involves specifying variables, constraints, and use of search algorithms to find solutions.
+   - Sub-field of AI that intersects with optimization and decision-making.
    - It ensures AI-generated solutions are rule-compliant, which is crucial in regulated industries like finance and healthcare.
    - CP is used in logistics optimization, route planning, operations management, and resource allocation.
      #+BEGIN_COMMENT
@@ -53,15 +53,15 @@
      - Example: CP helps optimize resource scheduling in industries like manufacturing and logistics, ensuring adherence to constraints.
      #+END_COMMENT
 ** CP Techniques in Generative AI
-   - Constraint Satisfaction Problems (CSPs) and Constraint Optimization Problems (COPs)
+   - Constraint Satisfaction Problems (CSPs) and Constraint Optimization Problems (COPs).
      - CSPs involve finding any solution that satisfies all constraints, while COPs involve finding the best solution based on an objective function.
-   - Example Techniques
+   - Example CSP Techniques
      - Backtracking tries and eliminates options that don’t meet constraints.
      - Local Search iteratively improves a solution by making small adjustments.
      - Constraint Propagation reduces search space by removing invalid values early.
 
 ** Constraint Propagation
-    - Constraint Propagation is a key CP technique used to reduce the search space.
+    - Constraint Propagation is a key CSP technique used to reduce the search space.
     - It removes invalid possibilities early in the search, leading to faster solutions.
     - Relevance to Generative AI: Helps AI systems make structured decisions in real-time.
 
