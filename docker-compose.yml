@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  icsiscet-talk:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    command: java -jar build/libs/icsiscet-talk-1.0-SNAPSHOT.jar
